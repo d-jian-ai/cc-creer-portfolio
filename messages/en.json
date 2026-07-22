@@ -6,7 +6,13 @@
   },
   "home": {
     "name": "Name placeholder · TBD",
-    "tagline": "One-line tagline placeholder · TBD"
+    "tagline": "One-line tagline placeholder · TBD",
+    "workEntryTitle": "Selected Work",
+    "workEntryDescription": "Work preview placeholder · TBD",
+    "workEntryCta": "View all work",
+    "spaceEntryTitle": "Space",
+    "spaceEntryDescription": "Thoughts & experiments placeholder · TBD",
+    "spaceEntryCta": "Enter Space"
   },
   "work": {
     "title": "Work",
