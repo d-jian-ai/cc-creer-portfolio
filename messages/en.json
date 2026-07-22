@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "home": "Home",
+    "work": "Work",
+    "space": "Space"
+  },
+  "home": {
+    "name": "Name placeholder · TBD",
+    "tagline": "One-line tagline placeholder · TBD"
+  },
+  "work": {
+    "title": "Work",
+    "description": "Work list placeholder · TBD (All / Visual / Web / Video)",
+    "detailTitle": "Work detail placeholder",
+    "detailBody": "Work content placeholder · TBD"
+  },
+  "space": {
+    "title": "Space",
+    "description": "Space placeholder · TBD (interactive experiment + notes / thoughts)"
+  },
+  "footer": {
+    "copyright": "© {year} Name placeholder · TBD",
+    "contact": "Email placeholder · TBD　·　Social links placeholder · TBD"
+  }
+}

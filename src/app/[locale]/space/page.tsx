@@ -1,0 +1,12 @@
+import { useTranslations } from "next-intl";
+
+export default function SpacePage() {
+  const t = useTranslations("space");
+
+  return (
+    <section className="mx-auto w-full max-w-3xl flex-1 px-6 py-24">
+      <h1 className="text-3xl font-semibold tracking-tight">{t("title")}</h1>
+      <p className="mt-4 text-foreground/60">{t("description")}</p>
+    </section>
+  );
+}

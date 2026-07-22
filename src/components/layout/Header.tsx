@@ -1,27 +1,26 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-const links = [
-  { href: "/work", label: "作品" },
-  { href: "/about", label: "关于" },
-  { href: "/writing", label: "文章" },
-  { href: "/contact", label: "联系" },
-];
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
+import LangSwitcher from "./LangSwitcher";
 
 export default function Header() {
+  const t = useTranslations("nav");
   const pathname = usePathname();
+
+  const links = [
+    { href: "/", label: t("home") },
+    { href: "/work", label: t("work") },
+    { href: "/space", label: t("space") },
+  ];
 
   return (
     <header className="sticky top-0 z-50 border-b border-foreground/10 bg-background/80 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-sm font-medium tracking-tight">
-          姓名占位 · 待补充
-        </Link>
         <ul className="flex gap-6 text-sm">
           {links.map((link) => {
-            const isActive = pathname.startsWith(link.href);
+            const isActive =
+              link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
             return (
               <li key={link.href}>
                 <Link
@@ -38,6 +37,7 @@ export default function Header() {
             );
           })}
         </ul>
+        <LangSwitcher />
       </nav>
     </header>
   );

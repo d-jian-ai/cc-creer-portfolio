@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "home": "首页",
+    "work": "作品",
+    "space": "空间"
+  },
+  "home": {
+    "name": "姓名占位 · 待补充",
+    "tagline": "一句话定位占位 · 待补充"
+  },
+  "work": {
+    "title": "作品集",
+    "description": "作品列表占位 · 待补充（全部 / 视觉设计 / 网页产品 / 视频动态）",
+    "detailTitle": "作品详情占位",
+    "detailBody": "作品内容占位 · 待补充"
+  },
+  "space": {
+    "title": "空间",
+    "description": "空间占位 · 待补充（互动小游戏 + 作者的话 / 思考 / 练习记录）"
+  },
+  "footer": {
+    "copyright": "© {year} 姓名占位 · 待补充",
+    "contact": "邮箱占位 · 待补充　·　社交链接占位 · 待补充"
+  }
+}
