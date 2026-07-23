@@ -22,7 +22,9 @@
   },
   "space": {
     "title": "Space",
-    "description": "Space placeholder · TBD (interactive experiment + notes / thoughts)"
+    "description": "Space placeholder · TBD (interactive experiment + notes / thoughts)",
+    "fireflyHint": "Move your cursor — the fireflies will gather",
+    "fireflyDisabled": "Firefly scene placeholder · motion disabled by system setting"
   },
   "footer": {
     "copyright": "© {year} Name placeholder · TBD",

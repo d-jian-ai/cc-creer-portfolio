@@ -22,7 +22,9 @@
   },
   "space": {
     "title": "空间",
-    "description": "空间占位 · 待补充（互动小游戏 + 作者的话 / 思考 / 练习记录）"
+    "description": "空间占位 · 待补充（互动小游戏 + 作者的话 / 思考 / 练习记录）",
+    "fireflyHint": "鼠标划过，萤火虫会聚过来",
+    "fireflyDisabled": "萤火虫场景占位 · 系统已关闭动效"
   },
   "footer": {
     "copyright": "© {year} 姓名占位 · 待补充",

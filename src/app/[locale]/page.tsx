@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import HeroGlow from "@/components/home/HeroGlow";
+import HeroBackground from "@/components/home/HeroBackground";
 import Reveal from "@/components/motion/Reveal";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <section className="relative flex flex-1 flex-col items-center justify-center overflow-hidden px-6 py-24 text-center">
-        <HeroGlow />
+        <HeroBackground />
         <div className="relative z-10">
           <h1 className="text-4xl font-semibold tracking-tight sm:text-6xl">
             {t("name")}

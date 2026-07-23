@@ -22,7 +22,9 @@
   },
   "space": {
     "title": "Espace",
-    "description": "Espace à définir · À définir (expérience interactive + réflexions / notes)"
+    "description": "Espace à définir · À définir (expérience interactive + réflexions / notes)",
+    "fireflyHint": "Bougez le curseur, les lucioles se rassemblent",
+    "fireflyDisabled": "Scène de lucioles à définir · animations désactivées par le système"
   },
   "footer": {
     "copyright": "© {year} Nom à renseigner · À définir",

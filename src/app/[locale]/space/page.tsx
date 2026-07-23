@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import Reveal from "@/components/motion/Reveal";
+import FireflyField from "@/components/space/FireflyField";
 
 export default function SpacePage() {
   const t = useTranslations("space");
@@ -11,6 +12,10 @@ export default function SpacePage() {
           {t("title")}
         </h1>
         <p className="mt-4 text-foreground/60">{t("description")}</p>
+      </Reveal>
+
+      <Reveal className="mt-10" delay={0.1}>
+        <FireflyField />
       </Reveal>
     </section>
   );
