@@ -54,3 +54,9 @@ body {
     transform: translate(4%, -5%) scale(0.95);
   }
 }
+
+.custom-cursor-active,
+.custom-cursor-active a,
+.custom-cursor-active button {
+  cursor: none;
+}

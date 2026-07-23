@@ -1,0 +1,31 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "work": "Travaux",
+    "space": "Espace"
+  },
+  "home": {
+    "name": "Nom à renseigner · À définir",
+    "tagline": "Phrase d'accroche à définir · À définir",
+    "workEntryTitle": "Travaux sélectionnés",
+    "workEntryDescription": "Aperçu des travaux à définir · À définir",
+    "workEntryCta": "Voir tous les travaux",
+    "spaceEntryTitle": "Espace",
+    "spaceEntryDescription": "Réflexions et expérimentations à définir · À définir",
+    "spaceEntryCta": "Entrer dans l'espace"
+  },
+  "work": {
+    "title": "Travaux",
+    "description": "Liste des travaux à définir · À définir (Tous / Visuel / Web / Vidéo)",
+    "detailTitle": "Détail du travail à définir",
+    "detailBody": "Contenu du travail à définir · À définir"
+  },
+  "space": {
+    "title": "Espace",
+    "description": "Espace à définir · À définir (expérience interactive + réflexions / notes)"
+  },
+  "footer": {
+    "copyright": "© {year} Nom à renseigner · À définir",
+    "contact": "Email à définir · À définir　·　Liens sociaux à définir · À définir"
+  }
+}

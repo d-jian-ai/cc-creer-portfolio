@@ -6,6 +6,8 @@ import { routing } from "@/i18n/routing";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import LoadingGate from "@/components/loading/LoadingGate";
+import SmoothScroll from "@/components/motion/SmoothScroll";
+import Cursor from "@/components/motion/Cursor";
 import "../globals.css";
 
 const geistSans = Geist({
@@ -47,10 +49,13 @@ export default async function RootLayout({
     >
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider>
-          <LoadingGate />
-          <Header />
-          {children}
-          <Footer />
+          <SmoothScroll>
+            <LoadingGate />
+            <Cursor />
+            <Header />
+            {children}
+            <Footer />
+          </SmoothScroll>
         </NextIntlClientProvider>
       </body>
     </html>
