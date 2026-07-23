@@ -8,6 +8,52 @@ import { detectWeather, type WeatherKind } from "@/lib/weather";
 
 const ENTER_KEY = "site-entered";
 const MIN_LOADING_MS = 1200;
+const HARD_TIMEOUT_MS = 4000;
+
+function withHardTimeout<T>(
+  promise: Promise<T>,
+  ms: number,
+  fallback: T,
+): Promise<T> {
+  return new Promise((resolve) => {
+    let settled = false;
+    const timer = window.setTimeout(() => {
+      if (settled) return;
+      settled = true;
+      resolve(fallback);
+    }, ms);
+
+    promise
+      .then((value) => {
+        if (settled) return;
+        settled = true;
+        window.clearTimeout(timer);
+        resolve(value);
+      })
+      .catch(() => {
+        if (settled) return;
+        settled = true;
+        window.clearTimeout(timer);
+        resolve(fallback);
+      });
+  });
+}
+
+function readEnteredFlag(): boolean {
+  try {
+    return !!sessionStorage.getItem(ENTER_KEY);
+  } catch {
+    return false;
+  }
+}
+
+function writeEnteredFlag() {
+  try {
+    sessionStorage.setItem(ENTER_KEY, "1");
+  } catch {
+    // ignore — storage may be unavailable (e.g. private browsing)
+  }
+}
 
 export default function LoadingGate() {
   const [mounted, setMounted] = useState(false);
@@ -19,7 +65,7 @@ export default function LoadingGate() {
   useEffect(() => {
     setMounted(true);
 
-    if (sessionStorage.getItem(ENTER_KEY)) {
+    if (readEnteredFlag()) {
       setVisible(false);
       return;
     }
@@ -27,15 +73,17 @@ export default function LoadingGate() {
     let cancelled = false;
     const start = Date.now();
 
-    detectWeather().then((w) => {
-      if (cancelled) return;
-      setWeather(w);
-      const elapsed = Date.now() - start;
-      const wait = Math.max(MIN_LOADING_MS - elapsed, 0);
-      window.setTimeout(() => {
-        if (!cancelled) setReady(true);
-      }, wait);
-    });
+    withHardTimeout(detectWeather(), HARD_TIMEOUT_MS, "fog" as WeatherKind).then(
+      (w) => {
+        if (cancelled) return;
+        setWeather(w);
+        const elapsed = Date.now() - start;
+        const wait = Math.max(MIN_LOADING_MS - elapsed, 0);
+        window.setTimeout(() => {
+          if (!cancelled) setReady(true);
+        }, wait);
+      },
+    );
 
     return () => {
       cancelled = true;
@@ -53,7 +101,7 @@ export default function LoadingGate() {
 
   const handleEnter = useCallback(() => {
     setLeaving(true);
-    sessionStorage.setItem(ENTER_KEY, "1");
+    writeEnteredFlag();
     window.setTimeout(() => setVisible(false), 700);
   }, []);
 
